@@ -4,7 +4,6 @@ public class Panda{
     private int xcord;
     private int ycord;
     //anything else we need
-    //are we putting scores here or making a user in the main?
 
     public Panda(){
 	//temporary until we start coding game
@@ -23,9 +22,6 @@ public class Panda{
 	ycord = newloc[1];
     }
 
-    //forgot whether it would be better to code this here or in the game file
-    public boolean isDead(){
-	return true;
-    }
+}
 
     
