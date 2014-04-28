@@ -61,16 +61,7 @@ public class Pipe{
 
 
     //sample code fro flappybird wwalls
-package crappyBird;
- 
-import java.awt.Graphics;
-import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
-import java.util.Random;
-import javax.imageio.ImageIO;
- 
+
 /* Here's how this works:
 *
 * || || || ||
