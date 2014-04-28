@@ -13,5 +13,14 @@ public class Map{
 	return dist;
     }
 
-    //something to get pipes/if you hit pipes here
+    public void addPipe(int x, int y, int h, Color c){
+	pipes.add(new Pipe(x, y, h, c));
+    }
+
+    public int getPipes(){
+	return pipes.length;
+    }
+
+
+
 }
