@@ -1,5 +1,5 @@
 public class Pipe{
-
+    //we are doing spacing between the bars instead of two separate bars -cx
     Random rnd = new Random();
     private static int speed = 6;
 
