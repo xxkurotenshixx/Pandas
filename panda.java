@@ -17,9 +17,22 @@ public class Panda{
 	return loc;
     }
 
-    public void move(int[] newloc){
+    //panda enters new map, restore beginning position
+    public void newMap(int[] newloc){
 	xcord = newloc[0];
 	ycord = newloc[1];
+    }
+
+    public void moveUp(){
+	ycord += 10;
+    }
+
+    public void moveDown(){
+	ycord -= 10;
+    }
+
+    public void moveForward(){
+	xcord++;
     }
 
 }

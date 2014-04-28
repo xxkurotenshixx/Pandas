@@ -16,6 +16,17 @@ public class Game{
 	return false;
     }
 
+    private boolean swipeUp(){
+	myPanda.moveUp();
+	return true;
+    }
+
+    private boolean swipeDown(){
+	myPanda.moveDown();
+	return true;
+    }
+
+
     public void play(){
 	while (myPanda.getLocation < map.getLength){
 	    score++;
