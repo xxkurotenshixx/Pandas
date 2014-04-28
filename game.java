@@ -1,18 +1,30 @@
 public class Game{
 
-    private panda myPanda;
+    private Panda myPanda;
     private int score;
-    private maze myMaze;
+    private Map myMap;
 
     //probably should figure out how to select a maze from the presets
     public Game(){
-	myPanda = Panda();
+	myPanda = new Panda();
 	score = 0;
-	myMaze = maze();
+	myMap = new Map();
     }
 
-    //something pipes, cordinates, panda
+    //something pipes, coordinates, panda
     private boolean isPandaDead(){
+	n = myMap.getPipes().length;
+	for (int i = 0; i < n; i++){
+	    p = myMap.getPipes()[i];
+	    if (p.getX() == myPanda.getX()){
+		if (p.getY() < 0){
+		    if (myPanda.getY() > p.getY())
+			return true;
+		}
+		else if (myPanda.getY() < p.getY())
+		    return true;
+	    }
+	}
 	return false;
     }
 
@@ -30,6 +42,7 @@ public class Game{
     public void play(){
 	while (myPanda.getLocation < map.getLength){
 	    score++;
+	    myPanda.moveForward();
 	    if (isPandaDead())
 		break;
 	}
