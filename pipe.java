@@ -1,17 +1,30 @@
+import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
+
+import javax.imageio.ImageIO;
+import javax.swing.Timer;
+
 public class Pipe{
     //we are doing spacing between the bars instead of two separate bars -cx
     Random rnd = new Random();
-    private static int speed = 6;
-
+    private static int speed = 6; //scrolling speed
+    private static int width = 40; //width of the pipes are static 
+    private static int gap = 25; //gap between pipes are constant
     private int xcor;
     private int ycor;
     private Color _color;
     private int height;  
 
+
     public Pipe(){
 	_color = "Green";
 	xcor = 0;
-	ycor = 0;
+	ycor = rnd.nextInt(height - 400) + 200;;
 	height = 0;
     }
 
@@ -28,7 +41,7 @@ public class Pipe{
 
     public int getY(){
 	return ycor;
-    } 
+    }
 
     public int getHeight(){
 	return height;
@@ -59,28 +72,11 @@ public class Pipe{
 	return ans;
     }
 
-
-    //sample code fro flappybird wwalls
-
-/* Here's how this works:
-*
-* || || || ||
-* || || --> || || --REPEAT-->
-* || || || ||
-* wall wall2 wall2 wall(loops back around at a different height)
-*
-*/
- 
-    public class Wall {
+    //sourcehelp:
+    //sample code from flappybird wwalls
+ https://gist.github.com/anonymous/8900751
     
-    Random rnd = new Random(); //used to generate a random height for dat gap
-    int x ; //the x position of the wall, always changing (right to left)
-    int y = rnd.nextInt(Game.HEIGHT - 400) + 200; //generates the y value that is the top of the bottom wall
-    static int speed = - 6; //scrolling speed
-    
-    int WIDTH = 45; //width of a wall, it's a constant
-    
-    int height = Game.HEIGHT - y; //height of the wall, just the height of the window - how high the wall is
+  
     int GAP = 200; //gap size (also a constant)
     //procures the Wall image from Imgur
     static BufferedImage img = null;{
@@ -97,26 +93,4 @@ public class Pipe{
 	g.drawImage(img, x, y, null); //top part
 	g.drawImage(img, x, ( -Game.HEIGHT ) + ( y - GAP), null); //bottom part
     }
-    public void move(){
-	x += speed; //scrolls the wall
-	//These Rectanlges are used to detect collisions
-	Rectangle wallBounds = new Rectangle(x, y, WIDTH, height);
-	Rectangle wallBoundsTop = new Rectangle(x, 0, WIDTH, Game.HEIGHT - (height + GAP));
-	//If birdman collids with a wall, he dies and the game, bird, and walls are all reset
-	if ( (wallBounds.intersects(BirdMan.getBounds()) ) || (wallBoundsTop.intersects(BirdMan.getBounds()))){
-	    BirdMan.reset();
-	    died();
-	}
-	//pushes the wall back to just off screen on the right when it gets offscreen on the left (the loop)
-	if (x <= 0 - WIDTH){
-	    x = Game.WIDTH;
-	    y = rnd.nextInt(Game.HEIGHT - 400) + 200;
-	    height = Game.HEIGHT - y;
-	}
-    }
-    
-    //this is executed on death, just sets a random y value and tells Game that the bird died :(
-    public void died(){
-	y = rnd.nextInt(Game.HEIGHT - 400) + 200;
-	height = Game.HEIGHT - y;
-	Game.dead = true;
+   
