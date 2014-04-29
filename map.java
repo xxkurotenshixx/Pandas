@@ -1,12 +1,18 @@
 public class Map{
     
     private int dist;
+    private height = 100;
     private pipes[] pipes;
 
     public Map(){
 	dist = 0;
 	//should probably take a set pipe maze from game in Map
 	pipes = [];
+	height = 100;
+    }
+
+    public int getHeight(){
+	return height;
     }
 
     public int getDistance(){

@@ -1,3 +1,5 @@
+import java.awt.event
+
 public class Game{
 
     private Panda myPanda;
@@ -40,11 +42,19 @@ public class Game{
 
 
     public void play(){
+	e = mouseClick();
 	while (myPanda.getLocation < map.getLength){
 	    score++;
 	    myPanda.moveForward();
 	    if (isPandaDead())
 		break;
+	    //if user tells bird to go somewhere
+	    if (e){
+		if (e.getYOnScreen < myMap.getHeight())
+		    swipeUp();
+		else
+		    swipeDown();
+	    }
 	}
 	System.out.println(score);
 	
