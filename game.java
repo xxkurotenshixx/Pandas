@@ -1,4 +1,4 @@
-import java.awt.event
+import java.awt.event;
 
 public class Game{
 
@@ -31,12 +31,12 @@ public class Game{
     }
 
     private boolean swipeUp(){
-	myPanda.moveUp();
+	myPanda.setY(50);
 	return true;
     }
 
     private boolean swipeDown(){
-	myPanda.moveDown();
+	myPanda.setY(50);
 	return true;
     }
 

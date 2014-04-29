@@ -55,14 +55,14 @@ public class Pipe{
     //returns old methods
 
     public int setX(int x){
-	int ans = _xcor;
-	_xcor=x;
+	int ans = xcor;
+	xcor=x;
 	return ans;
     }
 
     public int setY(int y){
-	int ans = _ycor;
-	_ycor=y;
+	int ans = ycor;
+	ycor=y;
 	return ans;
     }
 
@@ -73,8 +73,8 @@ public class Pipe{
     }
 
     //sourcehelp:
-    //sample code from flappybird wwalls
- https://gist.github.com/anonymous/8900751
+    //sample code from flappybird walls
+    // https://gist.github.com/anonymous/8900751
     
   
     int GAP = 200; //gap size (also a constant)
@@ -93,4 +93,4 @@ public class Pipe{
 	g.drawImage(img, x, y, null); //top part
 	g.drawImage(img, x, ( -Game.HEIGHT ) + ( y - GAP), null); //bottom part
     }
-   
+}
