@@ -1,20 +1,12 @@
 Pandas
 ======
 
-A wonderful game
+A game combining pandas, bamboo, flappy bird, and tap tap revolution.
 
 
-Vacation Schedule
-=================
-Monday
-- finish basic structure
-- finish all classes
-
-Friday
-- have window working
-- have map working
-
-Tuesday
-- working model with at least one song
-- visuals not added yet
-- main menu
+Created by
+==========
+Helen Lin
+Isabella Siu
+Christine Xu
+Nancy Dai
