@@ -1,7 +1,6 @@
 public class Map{
     
-    private int dist;
-    private height = 100;
+    private int dist, height;
     private pipes[] pipes;
 
     public Map(){
@@ -26,7 +25,4 @@ public class Map{
     public int getPipes(){
 	return pipes.length;
     }
-
-
-
 }

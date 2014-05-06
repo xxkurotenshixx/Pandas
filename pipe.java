@@ -47,7 +47,7 @@ public class Pipe{
 	return height;
     }
 
-    public string getColor(){
+    public String getColor(){
 	return _color;
     }
 
