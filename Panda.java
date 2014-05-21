@@ -4,7 +4,7 @@ public class Panda{
 
     private int xcor;
     private int ycor;
-    //anything else we need
+    //xcor and ycor indicate top left corner of panda shape
 
     public Panda(){
 	//temporary until we start coding game
@@ -12,26 +12,22 @@ public class Panda{
 	ycor=0;
     }
 
-    //this is just me guessing what methods we'll use
     public int getX(){
 	return xcor;
     }
-
     public int getY(){
 	return ycor;
     }
-
     public boolean setX(int x){
 	xcor=x;
 	return true;
     }
-
     public boolean setY(int y){
 	ycor=y;
 	return true;
     }
 
-    //panda enters new map, restore beginning position
+    //panda resets its original position because it is starting a new game at a new map
     public void newMap(int[] newloc){
 	xcor = newloc[0];
 	ycor = newloc[1];

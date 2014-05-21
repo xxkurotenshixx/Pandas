@@ -1,13 +1,15 @@
 import java.util.ArrayList;
 
 public class Map{
-    
+
+    //dist is the distance that the panda should travel to complete the game
+    //height is the height of map
+    //pipes is arraylist of all pipes within the map    
     private int dist, height;
     private ArrayList pipes;
 
     public Map(){
 	dist = 0;
-	//should probably take a set pipe maze from game in Map
 	pipes = new ArrayList();
 	height = 100;
     }
@@ -15,7 +17,6 @@ public class Map{
     public int getHeight(){
 	return height;
     }
-
     public int getDistance(){
 	return dist;
     }
@@ -23,7 +24,6 @@ public class Map{
     public void addPipe(int x, int y, int h){
 	pipes.add(new Pipe(x, y, h));
     }
-
     public ArrayList getPipes(){
 	return pipes;
     }

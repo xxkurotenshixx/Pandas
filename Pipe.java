@@ -11,28 +11,24 @@ import javax.swing.Timer;
 import java.lang.Math.*;
 
 public class Pipe{
-    //we are doing spacing between the bars instead of two separate bars -cx
+
     private static int speed = 6; //scrolling speed
     private static int width = 40; //width of the pipes are static 
-    private static int gap = 25; //gap between pipes are constant
+    private static int gap = 25; //gap where panda can travel through is constant
     private int xcor;
     private int ycor;
-    //private Color _color;
-    private int height;  
+    //xcor and ycor indicate top left corner of the gap
 
 
     public Pipe(){
-	//_color = "Green";
 	xcor = 0;
 	ycor = (int)(Math.random() * (height - 400)) + 200;;
-	height = 0;
     }
 
-    public Pipe(int x, int y, int h){
+    public Pipe(int x, int y, int g){
 	xcor = x;
 	ycor = y;
-	//_color = "Green";
-	height = h;
+	gap = g;
     }
 
     public int getX(){
@@ -43,8 +39,8 @@ public class Pipe{
 	return ycor;
     }
 
-    public int getHeight(){
-	return height;
+    public int getGap(){
+	return gap;
     }
 
     //modifier methods:
@@ -62,18 +58,14 @@ public class Pipe{
 	return ans;
     }
 
-    public int setH(int newh){
-	int ans = height;
-	height = newh;
+    public int setGap(int g){
+	int ans = gap;
+	gap = g;
 	return ans;
     }
-
-    //sourcehelp:
-    //sample code from flappybird walls
-    // https://gist.github.com/anonymous/8900751
-    
-  
-    int GAP = 200; //gap size (also a constant)
+ 
+    //I have no idea what below stuff is
+    /*
     //procures the Wall image from Imgur
     static BufferedImage img = null;{
 	try {
@@ -87,4 +79,5 @@ public class Pipe{
 	g.drawImage(img, xcor, ycor, null); //top part
 	g.drawImage(img, xcor, height + ( ycor - GAP), null); //bottom part
     }
+*/
 }

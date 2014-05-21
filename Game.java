@@ -7,18 +7,19 @@ public class Game{
     private int score;
     private Map myMap;
 
-    //probably should figure out how to select a maze from the presets
+    //initialize game components
     public Game(){
 	myPanda = new Panda();
 	score = 0;
 	myMap = new Map();
     }
 
-    //something pipes, coordinates, panda
+    //if panda is within pipe opening (pipe rectangle), then panda is alive
+    //this function needs to be fixed
     private boolean isPandaDead(){
 	int n = myMap.getPipesLen();
 	for (int i = 0; i < n; i++){
-	    Pipe p = myMap.retPipe(i);
+	    Pipe p = myMap.getPipe(i);
 	    if (p.getX() == myPanda.getX()){
 		if (p.getY() < 0){
 		    if (myPanda.getY() > p.getY())
@@ -31,22 +32,27 @@ public class Game{
 	return false;
     }
 
+    //move panda up
     private boolean swipeUp(){
 	return myPanda.setY(50);
     }
 
+    //move panda down
     private boolean swipeDown(){
 	return myPanda.setY(50);
     }
 
-
+    //start playing game
     public void play(){
+
+	//while panda is travelling within map
 	while (myPanda.getX() < myMap.getDistance()){
+	    //as panda moves right, score goes up
 	    score++;
 	    myPanda.moveForward();
 	    if (isPandaDead())
 		break;
-	    //if user tells bird to go somewhere
+	    //mouse events swipeUp and swipeDown should go here
 	    /*
 	    if (e){
 		if (e.getYOnScreen < myMap.getHeight())
@@ -56,9 +62,13 @@ public class Game{
 	    }
 	    */
 	}
+	//at the end, some indication of what score is given
 	System.out.println(score);
 	
     }
+
+
+    //I have no idea what everything below this comment is. Swing experimentation?
  private JFrame mainFrame;
    private JLabel headerLabel;
    private JLabel statusLabel;
