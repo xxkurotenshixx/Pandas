@@ -1,7 +1,7 @@
 Pandas
 ======
 
-A game combining pandas, bamboo, flappy bird, and tap tap revolution.
+A game combining pandas, bamboo, flappy bird, and wonderful music.
 
 
 Created by
