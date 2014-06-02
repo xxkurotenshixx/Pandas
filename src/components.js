@@ -31,6 +31,9 @@ Crafty.c('Pipe', {
     //this.requires('Actor, Solid, pipe sprite file');
     Color = green;
   }
+  hit: function() {
+    Crafty.trigger('PipeHit', this);
+  }
 });
 
 Crafty.c('PlayerCharacter', {
