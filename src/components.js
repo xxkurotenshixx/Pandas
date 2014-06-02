@@ -29,7 +29,7 @@ Crafty.c('Pipe', {
   init: function() {
     this.requires('Actor, Solid, Color');
     //this.requires('Actor, Solid, pipe sprite file');
-    Color = green;
+    this.color('rgb(20, 125, 40)');
   }
   hit: function() {
     Crafty.trigger('PipeHit', this);
@@ -43,6 +43,7 @@ Crafty.c('PlayerCharacter', {
       .fourway(2)
       .stopOnSolids()
       .onHit('Pipe', this.runIntoPipe);
+      this.color('rgb(100, 20, 80)')
   },
   //causes it to stop moving when it hits an entity w/ the solid component
   stopOnSolids: function() {
