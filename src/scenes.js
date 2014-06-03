@@ -22,7 +22,9 @@ Crafty.defineScene("square", function(attributes) {
 
 });
 
-
+//---------------------------------
+//Core Gameplay
+//---------------------------------
 Crafty.scene('Game', function() {
   // A 2D array to keep track of all occupied tiles
   this.occupied = new Array(Game.map_grid.width);
@@ -31,8 +33,11 @@ Crafty.scene('Game', function() {
     for (var y = 0; y < Game.map_grid.height; y++) {
       this.occupied[i][y] = false;
     }
-  }  
- 
+  }
+});
+
+
+//Victory Scene
 Crafty.scene('Victory', function() {
   Crafty.e('2D, DOM, Text')
     .attr({ x: 0, y: 0 })
@@ -43,3 +48,17 @@ Crafty.scene('Victory', function() {
   });
 }, function() {
   this.unbind('KeyDown', this.restart_game);
+});
+	   
+//Game Over Scene
+Crafty.scene('Game Over', function() {
+  Crafty.e('2D, DOM, Text')
+    .attr({ x: 0, y: 0 })
+    .text('Game Over!');
+ 
+  this.restart_game = this.bind('KeyDown', function() {
+    Crafty.scene('Game');
+  });
+}, function() {
+  this.unbind('KeyDown', this.restart_game);
+});
