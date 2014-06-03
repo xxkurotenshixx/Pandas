@@ -9,10 +9,6 @@ Crafty.defineScene("loading", function() {
           .textColor("#FFFFFF");
 });
 
-Crafty.defineScene("UFO_dance",
-             function() {Crafty.background("#444"); Crafty.e("UFO");},
-             function() {...send message to server...});
-
 // An example of an init function which accepts arguments, in this case an object.
 Crafty.defineScene("square", function(attributes) {
     Crafty.background("#000");
