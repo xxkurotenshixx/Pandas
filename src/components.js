@@ -64,5 +64,14 @@ Crafty.c('PlayerCharacter', {
     pippe.hit();
   }
 });
-  
       
+Crafty.c('Goal', {
+  init: function() {
+    this.requires('Actor, Solid, Color');
+    //this.requires('Actor, Solid, pipe sprite file');
+    this.color('rgb(20, 125, 40)');
+  }
+  hit: function() {
+    Crafty.trigger('EndGoal', this);
+  }
+});
