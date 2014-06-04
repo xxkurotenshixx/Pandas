@@ -50,7 +50,7 @@ Crafty.c('PlayerCharacter', {
     this.onHit('Solid', this.stopMovement);
     return this;
   },
-  ..Stops movement
+  //Stops movement
   stopMovement: function() {
     this._speed = 0;
     if (this._movement) {
