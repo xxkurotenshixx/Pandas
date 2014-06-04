@@ -7,7 +7,7 @@ Crafty.defineScene("loading", function() {
           .text("Loading")
           .css({ "text-align": "center"})
           .textColor("#FFFFFF");
-    Crafty.load(Crafty.scene('Game'););
+    Crafty.load(function(){Crafty.scene('Game');});
 });
 
 // An example of an init function which accepts arguments, in this case an object.
