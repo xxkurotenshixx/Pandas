@@ -44,11 +44,6 @@ Crafty.scene('Game', function() {
 	//			// Place a tree entity at the current tile
 	//			Crafty.e('Tree').at(x, y)
 	//			this.occupied[x][y] = true;
-	//		} else if (Math.random() < 0.06 && !this.occupied[x][y]) {
-	//			// Place a bush entity at the current tile
-	//			var bush_or_rock = (Math.random() > 0.3) ? 'Bush' : 'Rock'
-	//			Crafty.e(bush_or_rock).at(x, y)
-	//			this.occupied[x][y] = true;
 	//		}
 	//	}
 	//}
