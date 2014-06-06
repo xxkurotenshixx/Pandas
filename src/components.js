@@ -22,7 +22,7 @@ Crafty.c('Grid', {
 Crafty.c('Actor', {
   init: function(){
     this.requires('2D, Canvas, Grid');
-  };
+  }
 });
 
 Crafty.c('Pipe', {
