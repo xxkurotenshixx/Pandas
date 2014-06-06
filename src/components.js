@@ -30,7 +30,7 @@ Crafty.c('Pipe', {
     this.requires('Actor, Solid, Color');
     //this.requires('Actor, Solid, pipe sprite file');
     this.color('rgb(20, 125, 40)');
-  }
+  },
   hit: function() {
     Crafty.trigger('PipeHit', this);
   }
@@ -70,7 +70,7 @@ Crafty.c('Goal', {
     this.requires('Actor, Solid, Color');
     //this.requires('Actor, Solid, pipe sprite file');
     this.color('rgb(20, 125, 40)');
-  }
+  },
   hit: function() {
     Crafty.trigger('EndGoal', this);
   }
