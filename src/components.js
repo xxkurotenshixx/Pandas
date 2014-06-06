@@ -19,7 +19,7 @@ Crafty.c('Grid', {
 
 //an actor is an entity tht is drawn in 2d on canvas
 //via coordinate grid
-Crafty.c('Actor' {
+Crafty.c('Actor', {
   init: function(){
     this.requires('2D, Canvas, Grid');
   };
