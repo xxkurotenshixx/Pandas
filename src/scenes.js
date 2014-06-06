@@ -1,13 +1,22 @@
 
 //loading scene 
-Crafty.scene("loading", function() {
+Crafty.scene("Loading", function() {
     Crafty.background("#000");
     Crafty.e("2D, DOM, Text")
           .attr({ w: 100, h: 20, x: 150, y: 120 })
           .text("Loading")
           .css({ "text-align": "center"})
           .textColor("#FFFFFF");
-    Crafty.load(function(){Crafty.scene('Game');});
+     // Load takes an array of assets and a callback when complete
+    Crafty.load(["assets/crafty_bng_tut_assets/16x16_forest_1.gif"], function() {
+	Crafty.sprite(16, 'assets/crafty_bng_tut_assets/16x16_forest_1.gif',{
+	    spr_tree: [0,0],
+	    spr_bush: [1,0],
+	    spr_village: [0,1],
+	    spr_rock: [1,1]
+	});
+      Crafty.scene("Game"); //when everything is loaded, run the main scene
+    });
 });
 
 //---------------------------------

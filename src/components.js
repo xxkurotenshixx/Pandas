@@ -27,8 +27,7 @@ Crafty.c('Actor', {
 
 Crafty.c('Pipe', {
   init: function() {
-    this.requires('Actor, Solid, Color');
-    //this.requires('Actor, Solid, pipe sprite file');
+    this.requires('Actor, Solid, spr_tree');
     this.color('rgb(20, 125, 40)');
   },
   hit: function() {
@@ -38,8 +37,8 @@ Crafty.c('Pipe', {
 
 Crafty.c('PlayerCharacter', {
   init: function() {
-    this.requires('Actor, Fourway, Collision, Color')
-    //this.requires('Actor, Fourway, Collision, panda sprite file, SpriteAnimation')
+    //this.requires('Actor, Fourway, Collision, Color')
+    this.requires('Actor, Fourway, Collision, spr_player, SpriteAnimation')
       .fourway(2)
       .stopOnSolids()
       .onHit('Pipe', this.runIntoPipe);
