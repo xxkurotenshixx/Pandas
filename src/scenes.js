@@ -1,6 +1,6 @@
 
 //loading scene 
-Crafty.defineScene("loading", function() {
+Crafty.scene("loading", function() {
     Crafty.background("#000");
     Crafty.e("2D, DOM, Text")
           .attr({ w: 100, h: 20, x: 150, y: 120 })
@@ -11,7 +11,7 @@ Crafty.defineScene("loading", function() {
 });
 
 // An example of an init function which accepts arguments, in this case an object.
-Crafty.defineScene("square", function(attributes) {
+Crafty.scene("square", function(attributes) {
     Crafty.background("#000");
     Crafty.e("2D, DOM, Color")
           .attr(attributes)
