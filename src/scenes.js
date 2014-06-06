@@ -10,15 +10,6 @@ Crafty.scene("loading", function() {
     Crafty.load(function(){Crafty.scene('Game');});
 });
 
-// An example of an init function which accepts arguments, in this case an object.
-Crafty.scene("square", function(attributes) {
-    Crafty.background("#000");
-    Crafty.e("2D, DOM, Color")
-          .attr(attributes)
-          .color("red");
-
-});
-
 //---------------------------------
 //Core Gameplay
 //---------------------------------
