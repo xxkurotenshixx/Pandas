@@ -4,7 +4,7 @@ Crafty.c('Grid', {
       w: Game.map_grid.tile.width,
       h: Game.map_grid.tile.height
     });
-  }
+  },
   
   //locate this entity on the grid
   at: function(x, y){
