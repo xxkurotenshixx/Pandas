@@ -44,11 +44,12 @@ Crafty.c('Ground', {
 Crafty.c('PlayerCharacter', {
   init: function() {
     //this.requires('Actor, Fourway, Collision, Color')
-    this.requires('Actor, Fourway, Collision, spr_player, SpriteAnimation, Gravity')
-      .fourway(40)
+    this.requires('Actor, Twoway, Collision, spr_player, SpriteAnimation, Gravity')
+      .twoway(0[,20])
       .stopOnSolids()
       .onHit('Pipe', this.runIntoPipe)
       .gravity('Floor');
+      .gravityConst(5)
       //this.color('rgb(100, 20, 80)')
 
       this.bind('NewDirection', function(data){
