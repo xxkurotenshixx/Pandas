@@ -35,14 +35,28 @@ Crafty.c('Pipe', {
   }
 });
 
+Crafty.c('Ground', {
+  init: function() {
+      this.requires('Pipe, Floor');
+  }
+});
+
 Crafty.c('PlayerCharacter', {
   init: function() {
     //this.requires('Actor, Fourway, Collision, Color')
-    this.requires('Actor, Fourway, Collision, spr_player, SpriteAnimation')
-      .fourway(2)
+    this.requires('Actor, Fourway, Collision, spr_player, SpriteAnimation, Gravity')
+      .fourway(40)
       .stopOnSolids()
-      .onHit('Pipe', this.runIntoPipe);
+      .onHit('Pipe', this.runIntoPipe)
+      .gravity('Floor');
       //this.color('rgb(100, 20, 80)')
+
+      this.bind('NewDirection', function(data){
+	  if (data.y < 0){
+	      this.antigravity()
+	      this.gravity('Floor');
+	  }
+      })
   },
   //causes it to stop moving when it hits an entity w/ the solid component
   stopOnSolids: function() {

@@ -13,7 +13,7 @@ Crafty.scene("Loading", function() {
 	    spr_tree: [0,0],
 	    spr_bush: [1,0],
 	    spr_village: [0,1],
-	    spr_rock: [1,1]
+	    spr_player: [1,1]
 	});
       Crafty.scene("Game"); //when everything is loaded, run the main scene
     });
