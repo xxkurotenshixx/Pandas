@@ -45,7 +45,7 @@ Crafty.c('PlayerCharacter', {
   init: function() {
     //this.requires('Actor, Fourway, Collision, Color')
     this.requires('Actor, Twoway, Collision, spr_player, SpriteAnimation, Gravity')
-      .twoway(0[,20])
+      .twoway(0[20])
       .stopOnSolids()
       .onHit('Pipe', this.runIntoPipe)
       .gravity('Floor');
