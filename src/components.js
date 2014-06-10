@@ -25,19 +25,25 @@ Crafty.c('Actor', {
   }
 });
 
-Crafty.c('Pipe', {
+Crafty.c('Obstacle', {
   init: function() {
     this.requires('Actor, Solid, spr_tree');
     //this.color('rgb(20, 125, 40)');
   },
   hit: function() {
-    Crafty.trigger('PipeHit', this);
+    Crafty.trigger('ObstacleHit', this);
   }
 });
 
+Crafty.c('Pipe', {
+  init: function() {
+    this.requires('Obstacle');
+    //this.color('rgb(20, 125, 40)');
+  },
+});
 Crafty.c('Ground', {
   init: function() {
-      this.requires('Pipe, Floor');
+      this.requires('Obstacle, Floor');
   }
 });
 
@@ -47,7 +53,7 @@ Crafty.c('PlayerCharacter', {
     this.requires('Actor, Fourway, Collision, spr_player, SpriteAnimation, Gravity')
       .fourway(20)
       .stopOnSolids()
-      .onHit('Pipe', this.runIntoPipe)
+      .onHit('Obstacle', this.runIntoObstacle)
       .gravity('Floor')
       .gravityConst(5);
       //this.color('rgb(100, 20, 80)')
@@ -73,7 +79,7 @@ Crafty.c('PlayerCharacter', {
     }
   },
   //responds to player hitting a pipe
-  runIntoPipe: function(data){
+  runIntoObstacle: function(data){
     pippe = data[0].obj;
     pippe.hit();
   }
