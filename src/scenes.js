@@ -59,7 +59,7 @@ Crafty.scene('Victory', function() {
     .text('Victory!');
  
   this.restart_game = this.bind('KeyDown', function() {
-    Crafty.scene('Game');
+    Crafty.scene('Loading');
   });
 }, function() {
   this.unbind('KeyDown', this.restart_game);
