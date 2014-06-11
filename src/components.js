@@ -55,7 +55,6 @@ Crafty.c('PlayerCharacter', {
       .stopOnSolids()
       .onHit('Obstacle', this.runIntoObstacle)
       .gravity('Floor')
-      .gravityConst(5);
       //this.color('rgb(100, 20, 80)')
 
       this.bind('NewDirection', function(data){
