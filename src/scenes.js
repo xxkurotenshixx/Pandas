@@ -56,7 +56,7 @@ Crafty.scene('Game', function() {
 Crafty.scene('Victory', function() {
   Crafty.e('2D, DOM, Text')
     .attr({ x: 0, y: 0 })
-    .text('Victory!');
+    .text('VICTORY!!! Panda Boo is now safe!! You are now a hero!');
  
   this.restart_game = this.bind('KeyDown', function() {
     Crafty.scene('Loading');
