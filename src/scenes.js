@@ -69,7 +69,7 @@ Crafty.scene('Game', function() {
 Crafty.scene('Game Over', function() {
   Crafty.e('2D, DOM, Text')
     .attr({ x: 0, y: 0 })
-    .text('Game Over!');
+    .text('Game Over! Panda Boo did not survive the fall. Press any key to restart.' );
  
   this.restart_game = this.bind('KeyDown', function() {
     Crafty.scene('Game');
