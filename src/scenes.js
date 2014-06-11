@@ -33,7 +33,7 @@ Crafty.scene('Game', function() {
   }
 
 	// Player character, placed at 5, 5 on our grid
-	this.player = Crafty.e('PlayerCharacter').at(5, 5);
+	this.player = Crafty.e('PlayerCharacter').at(10,10);
 	this.occupied[this.player.at().x][this.player.at().y] = true;
  
 	// Place a pipe at every edge square on our grid of 16x16 tiles
@@ -53,10 +53,10 @@ Crafty.scene('Game', function() {
 
 
 //Victory Scene
-Crafty.scene('Victory', function() {
-  Crafty.e('2D, DOM, Text')
-    .attr({ x: 0, y: 0 })
-    .text('VICTORY!!! Panda Boo is now safe!! You are now a hero!');
+	Crafty.scene('Victory', function() {
+  	Crafty.e('2D, DOM, Text')
+	  .attr({ x: 0, y: 0 })
+    	.text('VICTORY!!! Panda Boo is now safe!! You are now a hero!');
  
   this.restart_game = this.bind('KeyDown', function() {
     Crafty.scene('Loading');
