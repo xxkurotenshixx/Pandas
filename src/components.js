@@ -81,6 +81,7 @@ Crafty.c('PlayerCharacter', {
   runIntoObstacle: function(data){
     pippe = data[0].obj;
     pippe.hit();
+      this.destroy();
   }
 });
       
