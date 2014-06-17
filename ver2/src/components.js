@@ -50,10 +50,13 @@ Crafty.c('Pipe', {
 
 Crafty.c('Player', {
 	init:function(){
-	    this.requires('Actor, Collision, Gravity, Fourway, spr_panda')
-		.fourway(10)
+	    this.requires('Actor, Collision, Gravity, Multiway, spr_panda')
+		.multiway(10, {UP_ARROW: -90, DOWN_ARROW: 90})
 		.gravity('Floor')
 		.stopOnSolids();
+	    this.bind('EnterFrame', function(){
+		    this.x += 1;
+		});
 	},
 
 	stopOnSolids: function(){
@@ -76,7 +79,7 @@ Crafty.c('Player', {
 		this.y -= this._movement.y;
 	    }
 	},
-
+	
         dead: function(){
 	    Crafty.scene('Game Over');
 	},
