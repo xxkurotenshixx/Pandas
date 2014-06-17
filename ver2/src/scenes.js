@@ -54,10 +54,10 @@ Crafty.scene('Loading', function(){
 	
 	Crafty.audio.add('Stronger', ['sounds/Stronger.mp3', 'sounds/Stronger.wav', 'sounds/Stronger.ogg']);
 	
-	Crafty.load(['assets/forest1.gif'], function(){
-		Crafty.sprite(16, 'assets/forest1.gif', {
-			spr_wall: [0, 0],
-			spr_pipe: [0, 1],
+	Crafty.load(['assets/16x16_forest_1.gif'], function(){
+		Crafty.sprite(16, 'assets/16x16_forest_1.gif', {
+			spr_wall: [1, 0],
+			spr_pipe: [0, 0],
 		        spr_panda: [1, 1]
 		});
 		Crafty.scene('Game');
