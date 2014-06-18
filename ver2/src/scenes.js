@@ -4,24 +4,24 @@ Crafty.scene('Game', function(){
 	    this.occupied[x] = new Array(Game.map_grid.height);
 	    for (var y = 0; y < Game.map_grid.height; y++){
 		this.occupied[x][y] = false;
-		if (y == Game.map_grid.height - 1){
-		    Crafty.e('Wall').at(x, y);
+		if (y == 0){
+		    Crafty.e('Ceiling').at(x, y);
 		    this.occupied[x][y] = true;
 		}
-			
+		else if ( y == Game.map_grid.height / 2){
+		    Crafty.e('Platform').at(x, y);
+		    this.occupied[x][y] = true;
+		}
+		else if (y == Game.map_grid.height - 1){
+		    Crafty.e('Bottom').at(x, y);
+		    this.occupied[x][y] = true;
+		}
 	    }
 	}
 
 	this.player = Crafty.e('Player').at(5, Game.map_grid.height / 2);
 	Crafty.viewport.follow(this.player, 0, 10);
 	this.occupied[this.player.at().x][this.player.at().y] = true;
-	//this.floor = Crafty.e('2D, Canvas, Color, Collision, Floor, Solid')
-	//  .color('blue')
-	//  .attr({h:10, w: Game.width() * Game.map_grid.tile.width, x:0, y: Game.height() - 10});
-	this.ceiling = Crafty.e('2D, Canvas, Color, Solid, Collision')
-	   .attr({h:10, w: Game.width() * Game.map_grid.tile.width, x: 0, y: 0});
-	this.platform = Crafty.e('2D, Canvas, Color, Collision, Floor')
-	    .attr({h:16, w: Game.width() * Game.map_grid.tile.width, x: 0, y: Game.height() / 2 - 5});
 	for (var x = this.player.at().x + Game.map_grid.tile.width; x < Game.width() - Game.map_grid.tile.width; x ++){
 	    if (Math.random() < 0.3){
 		if (Math.random() < 0.5){
@@ -56,7 +56,7 @@ Crafty.scene('Loading', function(){
 	
 	Crafty.load(['assets/16x16_forest_1.gif'], function(){
 		Crafty.sprite(16, 'assets/16x16_forest_1.gif', {
-			spr_wall: [1, 0],
+			spr_wall: [0, 1],
 			spr_pipe: [0, 0],
 		        spr_panda: [1, 1]
 		});

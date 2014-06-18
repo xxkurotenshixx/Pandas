@@ -32,14 +32,23 @@ Crafty.c('Goal', {
 	}
     });
 
-Crafty.c('Wall',{
+Crafty.c('Ceiling', {
 	init: function(){
-	    this.requires('Actor, Solid, Color, Collision, Floor');
-	    this.color('blue');
+	    this.requires('Actor, Solid, Collision, spr_wall');
 	}
-	
     });
 
+Crafty.c('Platform', {
+	init:function(){
+	    this.requires('Actor, Collision, Floor, spr_wall');
+	}
+    });
+
+Crafty.c('Bottom', {
+	init:function(){
+	    this.requires('Actor, Collision, Floor, Solid, spr_wall');
+	}
+    });
 
 Crafty.c('Pipe', {
 	init: function(){
