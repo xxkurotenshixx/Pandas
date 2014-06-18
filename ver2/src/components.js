@@ -46,7 +46,7 @@ Crafty.c('Platform', {
 
 Crafty.c('Bottom', {
 	init:function(){
-	    this.requires('Actor, Collision, Floor, Solid, spr_wall');
+	    this.requires('Actor, Collision, Solid, Floor, spr_wall');
 	}
     });
 
