@@ -46,7 +46,7 @@ Crafty.c('Platform', {
 
 Crafty.c('Bottom', {
 	init:function(){
-	    this.requires('Actor, Collision, Solid, Floor, spr_wall');
+	    this.requires('Actor, Solid, Collision, Floor, spr_wall');
 	}
     });
 
@@ -69,7 +69,8 @@ Crafty.c('Player', {
 	},
 
 	stopOnSolids: function(){
-	    this.onHit('Wall', this.stopY);
+	    this.onHit('Ceiling', this.stopY);
+	    this.onHit('Bottom', this.stopY);
 	    this.onHit('Pipe', this.stopMovement, this.dead);
 	    this.onHit('Goal', this.win);
 	    return this;
